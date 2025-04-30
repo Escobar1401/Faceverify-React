@@ -1,14 +1,22 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom';
 import PrimaryButton from '../components/PrimaryButton';
 import './login.css';
 
 function Login() {
+    const navigate = useNavigate();
+
+    const handleFormSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        // Aquí puedes agregar lógica de validación o autenticación si es necesario
+        navigate('/home');
+    };
+
     return (
         <div className="login-container">
             <div className="login-container-title">
                 <span>FACEVERIFY</span>
             </div>
-            <form className="login-container-form">
+            <form className="login-container-form" onSubmit={handleFormSubmit}>
                 <div className="login-container-form-title">
                     <span>Iniciar Sesión</span>
                 </div>

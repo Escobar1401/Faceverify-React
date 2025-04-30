@@ -3,6 +3,7 @@ import image from './assets/logoFaceVerify.png'
 import CircularButton from './components/CircularButton'
 import Login from './pages/login'
 import RecoveryPass from './pages/recoverypass'
+import HomePage from './pages/home'
 import './App.css'
 
 function App() {
@@ -25,6 +26,17 @@ function App() {
         } />
         <Route path="/login" element={<Login />} />
         <Route path="/recoverypass" element={<RecoveryPass />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="*" element={
+          <div className='container'>
+            <div className='title-container'>
+              <span>404</span>
+            </div>
+            <div className='title-container'>
+              <span>Página no encontrada</span>
+            </div>
+          </div>
+        } />
       </Routes>
     </Router>
   )
