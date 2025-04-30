@@ -1,7 +1,8 @@
-import PrimaryButton from '../components/PrimaryButton'
-import './login.css'
+import { Link } from 'react-router-dom'
+import PrimaryButton from '../components/PrimaryButton';
+import './login.css';
 
-function login() {
+function Login() {
     return (
         <div className="login-container">
             <div className="login-container-title">
@@ -28,14 +29,15 @@ function login() {
                 <input type="password" placeholder="********" className="login-form-input-field" required />
 
                 <div className="login-button-container">
-                    <PrimaryButton text="iniciar Sesión" />
+                    <PrimaryButton text="Iniciar Sesión" />
                 </div>
 
                 <div className="login-container-form-forgot-password">
-                    <a href="">¿Olvidaste tu contraseña?</a>
+                    <Link to="/recoverypass">¿Olvidaste tu contraseña?</Link>
                 </div>
             </form>
         </div>
-    )
+
+    );
 }
-export default login
+export default Login;

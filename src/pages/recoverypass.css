@@ -1,0 +1,89 @@
+.recoverypass-container {
+    background-color: var(--primary-background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: poppins, sans-serif;
+  }
+  
+  .recoverypass-container-title {
+    color: var(--primary-text-color);
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .recoverypass-container-form {
+    background-color: var(--secondary-background-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; 
+    box-sizing: border-box;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .recoverypass-container-form-title{
+    font-size: 1.8rem;
+    color: var(--primary-text-color);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .recoverypass-form-input-label {
+    display: block;
+    font-size: 1rem;
+    color: var(--primary-text-color);
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .recoverypass-form-input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--primary-text-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--primary-text-color);
+    background-color: var(--primary-background-color); 
+    box-sizing: border-box;
+    margin-bottom: 15px;
+  }
+  
+  .recoverypass-button-container {
+    width: 100%;
+  }
+  
+  .recoverypass-container-form-forgot-password {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .recoverypass-container-form-forgot-password > a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .recoverypass-container-form-forgot-password > a:hover {
+    text-decoration: underline;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  

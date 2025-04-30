@@ -2,6 +2,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import image from './assets/logoFaceVerify.png'
 import CircularButton from './components/CircularButton'
 import Login from './pages/login'
+import RecoveryPass from './pages/recoverypass'
 import './App.css'
 
 function App() {
@@ -19,10 +20,11 @@ function App() {
             <div className='title-container'>
               <span>VERIFY</span>
             </div>
-            <CircularButton />
+            <CircularButton to='/login' />
           </div>
         } />
-        <Route path="/verification" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/recoverypass" element={<RecoveryPass />} />
       </Routes>
     </Router>
   )

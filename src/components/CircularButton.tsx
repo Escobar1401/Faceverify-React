@@ -2,11 +2,15 @@ import './CircularButton.css';
 import arrow from '../assets/right-arrow.svg';
 import { useNavigate } from 'react-router-dom';
 
-function CircularButton() {
+interface CircularButtonProps {
+  to: string; // Prop para especificar la ruta
+}
+
+function CircularButton({ to }: CircularButtonProps) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/verification');
+    navigate(to); // Navega a la ruta especificada en el prop
   };
 
   return (
@@ -16,4 +20,4 @@ function CircularButton() {
   );
 }
 
-export default CircularButton; 
+export default CircularButton;
