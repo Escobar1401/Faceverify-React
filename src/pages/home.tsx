@@ -1,11 +1,11 @@
 import './home.css';
 import Header from '../components/Header';
 
-function Login() {
+function Home() {
     return (
         <div className="container">
-            <Header></Header>
+            <Header />
         </div>
     );
 }
-export default Login;
+export default Home;
