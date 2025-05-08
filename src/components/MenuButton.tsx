@@ -1,12 +1,19 @@
-import './MenuButton.css'
-import menuIcon from '../assets/menu.svg'
+import './MenuButton.css';
+import menuIcon from '../assets/menu.svg';
+import { Link } from 'react-router-dom';
 
-function MenuButton() {
-    return (
-        <div className="menubutton">
-            <img src={menuIcon} alt="icon" />
-        </div>
-    )
+interface MenuButtonProps {
+  text: string;
+  link: string;
 }
 
-export default MenuButton
+function MenuButton({ text, link }: MenuButtonProps) {
+  return (
+    <Link to={`/${link}`} className="menubutton">
+      <img src={menuIcon} alt="icon" />
+      <span>{text}</span>
+    </Link>
+  );
+}
+
+export default MenuButton;

@@ -1,145 +1,92 @@
 import { useEffect, useState } from "react";
 import "./header.css";
-import MenuButton from "./MenuButton";
+import MenuToggleButton from "./MenuToggleButton";
 import LogoutButton from "./LogoutButton";
+import MenuOption from "./MenuOption";
 
 const menuOptions = {
-    estudiante: [
-        { text: "Inicio", link: "home" },
-        { text: "Justificación de inasistencias", link: "excuseform.html" },
-        { text: "Excusas", link: "#" },
-        { text: "Estadísticas", link: "#" },
-        { text: "Soporte técnico", link: "#" },
-        { text: "Cerrar sesión", link: "#" },
-    ],
-    profesor: [
-        { text: "Inicio", link: "home" },
-        { text: "Gestión de asistencia", link: "#" },
-        { text: "Consultas", link: "#" },
-        { text: "Registros manuales", link: "#" },
-        { text: "Observaciones", link: "#" },
-        { text: "Listas", link: "#" },
-        { text: "Estadísticas", link: "#" },
-        { text: "Cerrar sesión", link: "#" },
-    ],
-    "tutor-legal": [
-        { text: "Inicio", link: "home" },
-        { text: "Perfiles de estudiantes", link: "#" },
-        { text: "Notificaciones", link: "#" },
-        { text: "Gestión de excusas", link: "#" },
-        { text: "Listas", link: "#" },
-        { text: "Estadísticas", link: "#" },
-        { text: "Cerrar sesión", link: "#" },
-    ],
-    coordinador: [
-        { text: "Inicio", link: "home" },
-        { text: "Alertas", link: "#" },
-        { text: "Programación de asistencia", link: "#" },
-        { text: "Carga de imágenes", link: "#" },
-        { text: "Generación de informes", link: "#" },
-        { text: "Correcciones", link: "#" },
-        { text: "Estadísticas", link: "#" },
-        { text: "Cerrar sesión", link: "#" },
-    ],
-    secretaria: [
-        { text: "Inicio", link: "home" },
-        { text: "Registro de estudiantes", link: "#" },
-        { text: "Gestión de excusas", link: "#" },
-        { text: "Eliminación de datos", link: "#" },
-        { text: "Generación de informes", link: "#" },
-        { text: "Cerrar sesión", link: "#" },
-    ],
-    rector: [
-        { text: "Inicio", link: "home" },
-        { text: "Alertas", link: "#" },
-        { text: "Programación de asistencia", link: "#" },
-        { text: "Carga de imágenes", link: "#" },
-        { text: "Generación de informes", link: "#" },
-        { text: "Correcciones", link: "#" },
-        { text: "Estadísticas", link: "#" },
-        { text: "Cerrar sesión", link: "#" },
-    ],
+  estudiante: [
+    { text: "Inicio", link: "home" },
+    { text: "Justificación de inasistencias", link: "excuseform.html" },
+    { text: "Excusas", link: "#" },
+    { text: "Estadísticas", link: "#" },
+    { text: "Soporte técnico", link: "#" },
+    { text: "Cerrar sesión", link: "login" },
+  ],
+  profesor: [
+    { text: "Inicio", link: "home" },
+    { text: "Gestión de asistencia", link: "#" },
+    { text: "Consultas", link: "#" },
+    { text: "Registros manuales", link: "#" },
+    { text: "Observaciones", link: "#" },
+    { text: "Listas", link: "#" },
+    { text: "Estadísticas", link: "#" },
+    { text: "Cerrar sesión", link: "login" },
+  ],
+  "tutor-legal": [
+    { text: "Inicio", link: "home" },
+    { text: "Perfiles de estudiantes", link: "#" },
+    { text: "Notificaciones", link: "#" },
+    { text: "Gestión de excusas", link: "#" },
+    { text: "Listas", link: "#" },
+    { text: "Estadísticas", link: "#" },
+    { text: "Cerrar sesión", link: "login" },
+  ],
+  coordinador: [
+    { text: "Inicio", link: "home" },
+    { text: "Alertas", link: "#" },
+    { text: "Programación de asistencia", link: "#" },
+    { text: "Carga de imágenes", link: "#" },
+    { text: "Generación de informes", link: "#" },
+    { text: "Correcciones", link: "#" },
+    { text: "Estadísticas", link: "#" },
+    { text: "Cerrar sesión", link: "login" },
+  ],
+  secretaria: [
+    { text: "Inicio", link: "home" },
+    { text: "Registro de estudiantes", link: "#" },
+    { text: "Gestión de excusas", link: "#" },
+    { text: "Eliminación de datos", link: "#" },
+    { text: "Generación de informes", link: "#" },
+    { text: "Cerrar sesión", link: "login" },
+  ],
+  rector: [
+    { text: "Inicio", link: "home" },
+    { text: "Gestiones administrativas", link: "#" },
+    { text: "Control de personal", link: "#" },
+    { text: "Estadísticas generales", link: "#" },
+    { text: "Cerrar sesión", link: "login" },
+  ],
 };
 
 const Header = () => {
-    const [menuActive, setMenuActive] = useState(false);
-    const [userRole] = useState<keyof typeof menuOptions>(localStorage.getItem("userRole") as keyof typeof menuOptions || "estudiante");
-  
-    useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      const overlay = document.getElementById("menuOverlay") as HTMLElement | null;
-      const button = document.getElementById("openMenu") as HTMLElement | null;
-      if (overlay && !overlay.contains(e.target as Node) && button && !button.contains(e.target as Node)) {
-        setMenuActive(false);
-      }
-    };
-  
-      document.addEventListener("click", handleClickOutside);
-  
-      const currentPage = window.location.pathname.split("/").pop();
-      const allowedPages = menuOptions[userRole].map((opt) => opt.link.split("/").pop());
-      if (!allowedPages.includes(currentPage)) {
-        alert("No tienes permiso para acceder a esta página.");
-        window.location.href = "home";
-      }
-  
-      return () => {
-        document.removeEventListener("click", handleClickOutside);
-      };
-    }, [userRole]);
-  
-    interface MenuOption {
-      text: string;
-      link: string;
-    }
+  const [role, setRole] = useState<string | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    const storedRole = localStorage.getItem("rol");
+    if (storedRole) setRole(storedRole);
+  }, []);
 
-    const checkPermission = (link: string): boolean => {
-      const allowed: string[] = menuOptions[userRole].map((opt: MenuOption) => opt.link);
-      if (!allowed.includes(link)) {
-        alert("No tienes permiso para acceder a esta funcionalidad.");
-        return false;
-      }
-      return true;
-    };
-  
-    const handleLinkClick = (link: string, e: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void => {
-      if (!checkPermission(link)) {
-        e.preventDefault();
-      } else {
-        setMenuActive(false);
-      }
-    };
+  const options = role && menuOptions[role as keyof typeof menuOptions];
 
-    return (
-        <>
-          <header className="top-bar">
-            <div id="openMenu" onClick={() => setMenuActive(!menuActive)}>
-              <MenuButton />
-            </div>
-            <h1 className="title">FACEVERIFY</h1>
-            <div onClick={() => (window.location.href = "login.html")}>
-              <LogoutButton />
-            </div>
-          </header>
-    
-          <div className={`menu-overlay ${menuActive ? "active" : ""}`} id="menuOverlay">
-            <div className="menu-content">
-              <nav className="menu-nav">
-                <ul>
-                  {menuOptions[userRole].map((option, index) => (
-                    <li key={index}>
-                      <a href={option.link} onClick={(e) => handleLinkClick(option.link, e)}>
-                        {option.text}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </>
-      );
-    };
+  return (
+    <>
+      <div className="header">
+        <MenuToggleButton onClick={() => setMenuOpen(!menuOpen)} />
+        <span className="header-title">FACEVERIFY</span>
+        <LogoutButton />
+      </div>
+
+      {menuOpen && options && (
+        <div className="menu-dropdown">
+          {options.map((option, index) => (
+            <MenuOption key={index} text={option.text} link={option.link} />
+          ))}
+        </div>
+      )}
+    </>
+  );
+};
 
 export default Header;

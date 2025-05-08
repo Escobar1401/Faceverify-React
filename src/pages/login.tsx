@@ -1,13 +1,16 @@
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import PrimaryButton from '../components/PrimaryButton';
 import './login.css';
 
 function Login() {
     const navigate = useNavigate();
+    const [role, setRole] = useState('');
 
     const handleFormSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Aquí puedes agregar lógica de validación o autenticación si es necesario
+        // Guardar el tipo de usuario seleccionado
+        localStorage.setItem("rol", role);
         navigate('/home');
     };
 
@@ -20,16 +23,23 @@ function Login() {
                 <div className="login-container-form-title">
                     <span>Iniciar Sesión</span>
                 </div>
+
                 <label className="login-form-input-label">Tipo de usuario</label>
-                <select className="login-form-input-field" required>
-                    <option value="admin">Administrador</option>
+                <select
+                    className="login-form-input-field"
+                    required
+                    value={role}
+                    onChange={(e) => setRole(e.target.value)}
+                >
+                    <option value="">Selecciona un rol</option>
                     <option value="rector">Rector</option>
                     <option value="coordinador">Coordinador</option>
                     <option value="secretaria">Secretaria</option>
                     <option value="profesor">Profesor</option>
                     <option value="estudiante">Estudiante</option>
-                    <option value="tutor">Tutor</option>
+                    <option value="tutor-legal">Tutor Legal</option>
                 </select>
+
                 <label className="login-form-input-label">Correo Institucional</label>
                 <input type="text" placeholder="Correo institucional" className="login-form-input-field" required />
 
@@ -41,11 +51,11 @@ function Login() {
                 </div>
 
                 <div className="login-container-form-forgot-password">
-                    <Link to="/recoverypass">¿Olvidaste tu contraseña?</Link>
+                    <Link to="/recoverypass">Olvidaste tu contraseña?</Link>
                 </div>
             </form>
         </div>
-
     );
 }
+
 export default Login;
