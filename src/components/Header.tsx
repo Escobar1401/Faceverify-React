@@ -7,9 +7,9 @@ import MenuOption from "./MenuOption";
 const menuOptions = {
   estudiante: [
     { text: "Inicio", link: "home" },
-    { text: "Justificación de inasistencias", link: "Justification" },
-    { text: "Excusas", link: "falta" },
-    { text: "Estadísticas", link: "falta" },
+    { text: "Justificar inasistencia", link: "Justification" },
+    { text: "Mis excusas", link: "excuses" },
+    { text: "Mis estadísticas", link: "falta" },
     { text: "Soporte técnico", link: "falta" },
     { text: "Cerrar sesión", link: "login" },
   ],

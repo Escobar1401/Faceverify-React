@@ -7,6 +7,7 @@ import RecoveryPass from './pages/recoverypass'
 import ChangePass from './pages/changepass';
 import HomePage from './pages/home'
 import JustificationAbsence from './pages/estudiante/JustificationAbsence';
+import Excuses from './pages/estudiante/Excuses';
 import './App.css'
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/home" element={<HomePage />} />
           <Route path="/justification" element={<JustificationAbsence />} />
+          <Route path="/Excuses" element={<Excuses />} />
         </Route>
         <Route path="/changePass" element={<ChangePass />} />
         <Route path="*" element={
