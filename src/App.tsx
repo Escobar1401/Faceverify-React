@@ -1,4 +1,5 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import MainLayout from './components/MainLayout';
 import image from './assets/logoFaceVerify.png'
 import CircularButton from './components/CircularButton'
 import Login from './pages/login'
@@ -28,9 +29,11 @@ function App() {
         } />
         <Route path="/login" element={<Login />} />
         <Route path="/recoverypass" element={<RecoveryPass />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route element={<MainLayout />}>
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/justification" element={<JustificationAbsence />} />
+        </Route>
         <Route path="/changePass" element={<ChangePass />} />
-        <Route path="/justification" element={<JustificationAbsence />} />
         <Route path="*" element={
           <div className='container'>
             <div className='title-container'>

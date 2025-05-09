@@ -79,9 +79,14 @@ const Header = () => {
       </div>
 
       {menuOpen && options && (
-        <div className="menu-dropdown">
-          {options.map((option, index) => (
-            <MenuOption key={index} text={option.text} link={option.link} />
+        <div className={`menu-dropdown ${menuOpen ? 'open' : ''}`}>
+          {options?.map((option, index) => (
+            <MenuOption
+              key={index}
+              text={option.text}
+              link={option.link}
+              onClick={() => setMenuOpen(false)}
+            />
           ))}
         </div>
       )}
