@@ -1,4 +1,4 @@
-import './Searchbutton.css'
+import './SearchButton.css'
 import searchIcon from '../assets/search.svg'
 
 function SearchButton() {

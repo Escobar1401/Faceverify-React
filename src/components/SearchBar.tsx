@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './SearchBar.css';
-import SearchButton from './Searchbutton'; // asegúrate que la ruta sea correcta
+import SearchButton from './SearchButton'; // asegúrate que la ruta sea correcta
 
 interface SearchBarProps {
   onSearch: (value: string) => void;
