@@ -9,7 +9,7 @@ import HomePage from './pages/home'
 import JustificationAbsence from './pages/estudiante/JustificationAbsence';
 import Excuses from './pages/estudiante/Excuses';
 import Statistics from './pages/estudiante/Statistics';
-import TechSupport from './pages/techSupport';
+import TechSupport from './pages/techsupport';
 import './App.css'
 
 function App() {
