@@ -1,0 +1,19 @@
+.searchbar-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.searchbar-input {
+    padding-right: 40px;
+}
+
+.searchbar-icon {
+    position: absolute;
+    right: 5px;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+}

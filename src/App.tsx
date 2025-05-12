@@ -9,6 +9,7 @@ import HomePage from './pages/home'
 import JustificationAbsence from './pages/estudiante/JustificationAbsence';
 import Excuses from './pages/estudiante/Excuses';
 import Statistics from './pages/estudiante/Statistics';
+import TechSupport from './pages/techSupport';
 import './App.css'
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/justification" element={<JustificationAbsence />} />
           <Route path="/excuses" element={<Excuses />} />
           <Route path="/statistics" element={<Statistics />} />
+          <Route path="/techsupport" element={<TechSupport />} />
         </Route>
         <Route path="/changePass" element={<ChangePass />} />
         <Route path="*" element={

@@ -10,7 +10,7 @@ const menuOptions = {
     { text: "Justificar inasistencia", link: "justification" },
     { text: "Mis excusas", link: "excuses" },
     { text: "Mis estadísticas", link: "statistics" },
-    { text: "Soporte técnico", link: "falta" },
+    { text: "Soporte técnico", link: "techsupport" },
     { text: "Cerrar sesión", link: "login" },
   ],
   profesor: [
@@ -21,6 +21,7 @@ const menuOptions = {
     { text: "Observaciones", link: "falta" },
     { text: "Listas", link: "falta" },
     { text: "Estadísticas", link: "falta" },
+    { text: "Soporte técnico", link: "techsupport" },
     { text: "Cerrar sesión", link: "login" },
   ],
   "tutor-legal": [
@@ -30,6 +31,7 @@ const menuOptions = {
     { text: "Gestión de excusas", link: "falta" },
     { text: "Listas", link: "falta" },
     { text: "Estadísticas", link: "falta" },
+    { text: "Soporte técnico", link: "techsupport" },
     { text: "Cerrar sesión", link: "login" },
   ],
   coordinador: [
@@ -40,6 +42,7 @@ const menuOptions = {
     { text: "Generación de informes", link: "falta" },
     { text: "Correcciones", link: "falta" },
     { text: "Estadísticas", link: "falta" },
+    { text: "Soporte técnico", link: "techsupport" },
     { text: "Cerrar sesión", link: "login" },
   ],
   secretaria: [
@@ -48,6 +51,7 @@ const menuOptions = {
     { text: "Gestión de excusas", link: "falta" },
     { text: "Eliminación de datos", link: "falta" },
     { text: "Generación de informes", link: "falta" },
+    { text: "Soporte técnico", link: "techsupport" },
     { text: "Cerrar sesión", link: "login" },
   ],
   rector: [
@@ -55,6 +59,7 @@ const menuOptions = {
     { text: "Gestiones administrativas", link: "falta" },
     { text: "Control de personal", link: "falta" },
     { text: "Estadísticas generales", link: "falta" },
+    { text: "Soporte técnico", link: "techsupport" },
     { text: "Cerrar sesión", link: "login" },
   ],
 };
