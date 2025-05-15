@@ -39,3 +39,10 @@
     font-size: 0.95rem;
     color: var(--primary-text-color);
 }
+
+h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--primary-text-color);
+    text-align: center;
+}

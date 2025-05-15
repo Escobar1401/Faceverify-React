@@ -78,7 +78,7 @@ const Header = () => {
     <>
       <div className="header">
         <MenuToggleButton onClick={() => setMenuOpen(!menuOpen)} />
-        <span className="title">FACEVERIFY</span>
+        <span className="header-title">FACEVERIFY</span>
         <LogoutButton onClick={() => setLogoutModal(true)} />
       </div>
 
