@@ -1,6 +1,6 @@
-.primary-button {
-  background-color: var(--button-primary-background-color);
-  color: var(--button-primary-text-color);
+.secondary-button {
+  background-color: var(--button-secondary-background-color);
+  color: var(--button-secondary-text-color);
   border: none;
   padding: 12px 24px;
   border-radius: 10px;
@@ -14,25 +14,25 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.primary-button:hover {
-  background-color: var(--button-primary-hover-background-color);
+.secondary-button:hover {
+  background-color: var(--button-secondary-hover-background-color);
   transform: translateY(-2px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-.primary-button:active {
+.secondary-button:active {
   transform: translateY(0);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.primary-button.disabled {
+.secondary-button.disabled {
   background-color: #cccccc;
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
 }
 
-.primary-button.disabled:hover {
+.secondary-button.disabled:hover {
   background-color: #cccccc;
   transform: none;
   box-shadow: none;

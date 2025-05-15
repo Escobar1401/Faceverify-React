@@ -1,8 +1,15 @@
 import { useEffect, useState } from "react";
-import "./header.css";
+import "./Header.css";
 import MenuToggleButton from "./MenuToggleButton";
 import LogoutButton from "./LogoutButton";
 import MenuOption from "./MenuOption";
+import Modal from "./Modal";
+import TertiaryButton from "./TertiaryButton";
+
+type MenuOptionProps = {
+  text: string;
+  link: string;
+};
 
 const menuOptions = {
   estudiante: [
@@ -11,7 +18,6 @@ const menuOptions = {
     { text: "Mis excusas", link: "excuses" },
     { text: "Mis estadísticas", link: "statistics" },
     { text: "Soporte técnico", link: "techsupport" },
-    { text: "Cerrar sesión", link: "login" },
   ],
   profesor: [
     { text: "Inicio", link: "home" },
@@ -22,7 +28,6 @@ const menuOptions = {
     { text: "Listas", link: "falta" },
     { text: "Estadísticas", link: "falta" },
     { text: "Soporte técnico", link: "techsupport" },
-    { text: "Cerrar sesión", link: "login" },
   ],
   "tutor-legal": [
     { text: "Inicio", link: "home" },
@@ -32,7 +37,6 @@ const menuOptions = {
     { text: "Listas", link: "falta" },
     { text: "Estadísticas", link: "falta" },
     { text: "Soporte técnico", link: "techsupport" },
-    { text: "Cerrar sesión", link: "login" },
   ],
   coordinador: [
     { text: "Inicio", link: "home" },
@@ -43,7 +47,6 @@ const menuOptions = {
     { text: "Correcciones", link: "falta" },
     { text: "Estadísticas", link: "falta" },
     { text: "Soporte técnico", link: "techsupport" },
-    { text: "Cerrar sesión", link: "login" },
   ],
   secretaria: [
     { text: "Inicio", link: "home" },
@@ -52,7 +55,6 @@ const menuOptions = {
     { text: "Eliminación de datos", link: "falta" },
     { text: "Generación de informes", link: "falta" },
     { text: "Soporte técnico", link: "techsupport" },
-    { text: "Cerrar sesión", link: "login" },
   ],
   rector: [
     { text: "Inicio", link: "home" },
@@ -60,13 +62,13 @@ const menuOptions = {
     { text: "Control de personal", link: "falta" },
     { text: "Estadísticas generales", link: "falta" },
     { text: "Soporte técnico", link: "techsupport" },
-    { text: "Cerrar sesión", link: "login" },
   ],
 };
 
 const Header = () => {
   const [role, setRole] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [logoutModal, setLogoutModal] = useState(false);
 
   useEffect(() => {
     const storedRole = localStorage.getItem("rol");
@@ -79,21 +81,39 @@ const Header = () => {
     <>
       <div className="header">
         <MenuToggleButton onClick={() => setMenuOpen(!menuOpen)} />
-        <span className="header-title">FACEVERIFY</span>
-        <LogoutButton />
+        <span className="title">FACEVERIFY</span>
+        <LogoutButton onClick={() => setLogoutModal(true)} />
       </div>
 
-      {menuOpen && options && (
-        <div className={`menu-dropdown ${menuOpen ? 'open' : ''}`}>
-          {options?.map((option, index) => (
-            <MenuOption
-              key={index}
-              text={option.text}
-              link={option.link}
-              onClick={() => setMenuOpen(false)}
-            />
-          ))}
-        </div>
+      <div className={`menu-dropdown ${menuOpen ? 'open' : ''}`}>
+        {options?.map((option: MenuOptionProps, index: number) => (
+          <MenuOption
+            key={index}
+            text={option.text}
+            link={option.link}
+            onClick={() => setMenuOpen(false)}
+          />
+        ))}
+      </div>
+
+      {logoutModal && (
+        <Modal
+          title="¿Seguro que desea cerrar sesión?"
+          content={
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '20px' }}>
+              <div style={{ width: '100%', maxWidth: '180px' }}>
+                <TertiaryButton
+                  text="Salir"
+                  onClick={() => {
+                    localStorage.clear();
+                    window.location.href = "login";
+                  }}
+                />
+              </div>
+            </div>
+          }
+          onClose={() => setLogoutModal(false)}
+        />
       )}
     </>
   );

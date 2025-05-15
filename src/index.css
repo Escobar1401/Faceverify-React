@@ -14,5 +14,17 @@
   --primary-text-color: #005f73;
   --secondary-text-color: #cccccc;
   --tertiary-text-color: #000000;
-  --quaternary-text-color: #ffffff;;
+  --quaternary-text-color: #ffffff;
+
+  --button-primary-background-color: #005f73;
+  --button-secondary-background-color: #ffffff;
+  --button-tertiary-background-color: #f32323;
+
+  --button-primary-hover-background-color: #004f5f;
+  --button-secondary-hover-background-color: #cccccc;
+  --button-tertiary-hover-background-color: #bd1d1d;
+
+  --button-primary-text-color: #ffffff;
+  --button-secondary-text-color: #005f73;
+  --button-tertiary-text-color: #ffffff;
 }
