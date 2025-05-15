@@ -103,7 +103,7 @@ const Header = () => {
                   text="Salir"
                   onClick={() => {
                     localStorage.clear();
-                    window.location.href = "login";
+                    window.location.href = "#";
                   }}
                 />
               </div>
