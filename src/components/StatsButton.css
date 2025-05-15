@@ -1,0 +1,16 @@
+.statsButton {
+  width: 100%;
+  height: 100%;
+  max-width: 36px;
+  max-height: 36px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.statsButton img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

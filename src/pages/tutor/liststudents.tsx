@@ -37,7 +37,7 @@ const ListStudents = () => {
     return (
         <div className="login-container">
             <div className="login-container-form">
-                <h2 className="login-container-form-title">Perfiles de Estudiantes</h2>
+                <h2 className="login-container-form-title">Mis Estudiantes</h2>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                     {estudiantes.map((est) => (
                         <StudentCard key={est.id} {...est} />

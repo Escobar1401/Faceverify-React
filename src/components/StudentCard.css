@@ -35,3 +35,16 @@
   width: 36px;
   height: 36px;
 }
+
+.student-action-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.student-action-button {
+  width: 36px;
+  height: 36px;
+}

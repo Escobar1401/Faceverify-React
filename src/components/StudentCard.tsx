@@ -1,8 +1,11 @@
 import './StudentCard.css';
-import EyeButton from './EyeButton';
-import defaultProfileImage from '../assets/default-profile.png';
+import StatsButton from './StatsButton';
+import DocumentButton from './DocumentButton';
+import { useNavigate } from 'react-router-dom';
+import defaultProfile from '../assets/default-profile.png';
 
 interface StudentCardProps {
+  id: number;
   nombre: string;
   apellido: string;
   edad: number;
@@ -13,6 +16,7 @@ interface StudentCardProps {
 }
 
 const StudentCard = ({
+  id,
   nombre,
   apellido,
   edad,
@@ -21,11 +25,14 @@ const StudentCard = ({
   estado,
   imagen
 }: StudentCardProps) => {
+  const navigate = useNavigate();
+
   return (
     <div className="student-card">
       <div className="student-image">
-        <img src={imagen || defaultProfileImage} alt="foto estudiante" />
+        <img src={imagen || defaultProfile} alt="foto estudiante" />
       </div>
+
       <div className="student-info">
         <h3>{nombre} {apellido}</h3>
         <p>Edad: {edad}</p>
@@ -33,8 +40,14 @@ const StudentCard = ({
         <p>Excusas: {excusas}</p>
         <p>Estado: {estado}</p>
       </div>
-      <div className="student-action">
-        <EyeButton />
+
+      <div className="student-action-group">
+        <div className="student-action-button">
+          <StatsButton onClick={() => navigate(`/estadisticas-estudiante/${id}`)} />
+        </div>
+        <div className="student-action-button">
+          <DocumentButton onClick={() => navigate(`/excusas-estudiante/${id}`)} />
+        </div>
       </div>
     </div>
   );
