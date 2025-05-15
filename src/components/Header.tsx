@@ -86,7 +86,7 @@ const Header = () => {
       </div>
 
       <div className={`menu-dropdown ${menuOpen ? 'open' : ''}`}>
-        {options?.map((option: MenuOptionProps, index: number) => (
+        {Array.isArray(options) && options.map((option: MenuOptionProps, index: number) => (
           <MenuOption
             key={index}
             text={option.text}
