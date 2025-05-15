@@ -37,9 +37,9 @@ const Notifications = () => {
                             key={n.id}
                             style={{
                                 marginBottom: '15px',
-                                backgroundColor: 'var(--secondary-background-color)',
                                 padding: '15px',
                                 borderLeft: `5px solid ${tipoEstilo[n.tipo as keyof typeof tipoEstilo]}`,
+                                backgroundColor: `${tipoEstilo[n.tipo as keyof typeof tipoEstilo]}20`,
                                 borderRadius: '6px'
                             }}
                         >
