@@ -31,11 +31,10 @@ const menuOptions = {
   ],
   "tutor-legal": [
     { text: "Inicio", link: "home" },
-    { text: "Perfiles de estudiantes", link: "falta" },
+    { text: "Perfiles de mis estudiantes", link: "liststudents" },
+    { text: "Estadísticas", link: "falta" },
     { text: "Notificaciones", link: "falta" },
     { text: "Gestión de excusas", link: "falta" },
-    { text: "Listas", link: "falta" },
-    { text: "Estadísticas", link: "falta" },
     { text: "Soporte técnico", link: "techsupport" },
   ],
   coordinador: [

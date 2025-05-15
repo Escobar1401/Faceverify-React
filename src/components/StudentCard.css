@@ -1,0 +1,37 @@
+.student-card {
+  display: flex;
+  align-items: center;
+  background-color: var(--card-student-background-color);
+  padding: 15px;
+  border-radius: 10px;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.student-image img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.student-info {
+  flex: 1;
+}
+
+.student-info h3 {
+  margin: 0 0 5px;
+  font-size: 1.1rem;
+  color: var(--primary-text-color);
+}
+
+.student-info p {
+  margin: 3px 0;
+  font-size: 0.95rem;
+  color: var(--primary-text-color);
+}
+
+.student-action {
+  width: 36px;
+  height: 36px;
+}

@@ -10,6 +10,7 @@ import JustificationAbsence from './pages/estudiante/JustificationAbsence';
 import Excuses from './pages/estudiante/Excuses';
 import Statistics from './pages/estudiante/Statistics';
 import TechSupport from './pages/techsupport';
+import ListStudents from './pages/tutor/liststudents';
 import './App.css'
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="/excuses" element={<Excuses />} />
           <Route path="/statistics" element={<Statistics />} />
           <Route path="/techsupport" element={<TechSupport />} />
+          <Route path="/liststudents" element={<ListStudents />} />
         </Route>
         <Route path="/changePass" element={<ChangePass />} />
         <Route path="*" element={
