@@ -32,7 +32,7 @@ const menuOptions = {
   "tutor-legal": [
     { text: "Inicio", link: "home" },
     { text: "Mis estudiantes", link: "liststudents" },
-    { text: "Notificaciones", link: "falta" },
+    { text: "Notificaciones", link: "notifications" },
     { text: "Soporte técnico", link: "techsupport" },
   ],
   coordinador: [

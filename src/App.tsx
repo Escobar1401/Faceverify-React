@@ -13,6 +13,7 @@ import TechSupport from './pages/techsupport';
 import ListStudents from './pages/tutor/liststudents';
 import StatsStudentsID from './pages/tutor/statsstudentsid';
 import ExcusesStudentsID from './pages/tutor/excusesstudentsid';
+import Notifications from './pages/tutor/notification';
 import './App.css'
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           <Route path="/liststudents" element={<ListStudents />} />
           <Route path="/estadisticas-estudiante/:id" element={<StatsStudentsID />} />
           <Route path="/excusas-estudiante/:id" element={<ExcusesStudentsID />} />
+          <Route path="/notifications" element={<Notifications />} />
         </Route>
         <Route path="/changePass" element={<ChangePass />} />
         <Route path="*" element={
